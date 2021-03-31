@@ -9,7 +9,7 @@ export default class FindAllUsersService {
     private usersRepository: IUsersRepository
   ) { }
 
-  public async execute(): Promise<User[]> {
+  public async execute(): Promise<User[] | undefined> {
     const users = await this.usersRepository.index();
 
     return users;

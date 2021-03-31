@@ -2,14 +2,6 @@ import request from "supertest";
 import { app } from "../app";
 import { createConnection } from "typeorm";
 
-interface IUser {
-  id: string;
-  email: string;
-  name: string;
-  password: string;
-  created_at: Date;
-}
-
 describe("finances", () => {
   beforeAll(async () => {
     const connection = await createConnection();
@@ -40,7 +32,7 @@ describe("finances", () => {
     });
 
     const finance_response = await request(app).post(`/finances/${user_response.body.id}`).send({
-      description: "Galo pra Rinha",
+      description: "Galo pra rinha",
       value: 150,
     });
 
