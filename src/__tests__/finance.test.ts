@@ -32,7 +32,7 @@ describe("finances", () => {
     });
 
     const finance_response = await request(app).post(`/finances/${user_response.body.id}`).send({
-      description: "Galo pra rinha",
+      description: "Aposta no Jogo do Bicho",
       value: 150,
     });
 

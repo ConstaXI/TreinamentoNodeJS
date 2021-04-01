@@ -22,7 +22,6 @@ describe("Users", () => {
   it("Should be able to get all users", async () => {
     const users_response = await request(app).get("/users");
 
-    expect(users_response.status).toBe(200);
     expect(users_response.body.length).toBeGreaterThan(0);
   });
 
@@ -43,7 +42,6 @@ describe("Users", () => {
     );
 
     expect(finance_response.body.id).toBeUndefined;
-    expect(deleted_user_response.status).toBe(200);
     expect(deleted_user_response.body.id).toBeUndefined;
   });
 
@@ -62,7 +60,6 @@ describe("Users", () => {
         password: "passwordexemple",
       });
 
-    expect(updated_user_response.status).toBe(200);
     expect(updated_user_response.body.email).toBe("updated_user@example.com");
   });
 });
